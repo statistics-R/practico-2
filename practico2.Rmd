@@ -11,15 +11,30 @@ Repasaremos, específicamente, las propiedades de los estimadores, test de hipó
 
 ## 1. Propiedades de Estimadores
 
-Los **parámetros** corresponden a constantes que determinan direcciones y fortalezas de las relaciones entre variables de una población. Para conocer estos parámetros, es necesario recurrir a los **estimadores**.
+Al trabajar en una investigación, es muy probable que no podamos acceder a los datos de la población entera que nos interesa estudiar. Hasta ahora, hemos estudiado propiedades y estadísticos útiles para sacar conclusiones acerca de los datos que poseemos. Pero, **¿Qué pasa cuando necesitamos saber algo acerca de una población?**
+
+Como **población** se entiende cualquier grupo definido de elementos que buscamos estudiar. Este grupo puede ser las personas de un país, los estudiantes de una ciudad, las empresas de determinado rubro, etc. Una población puede ser de interés para investigaciones, diseños de políticas públicas, sondeos de opinión, investigaciones de mercado, entre muchas otras posibilidades.
+
+No obstante, resulta muy difícil acceder a una población para estudiarla. Por ejemplo, si buscamos estudiar a la población chilena mayor de 18 años, es imposible aplicar una encuesta a todas las personas que conforman esta población. Es por esto que se recurre a una **muestra**, la que constituye una selección de una parte de la población que nos interesa. A través de una muestra, podemos conocer algo sobre la población.
+
+Pero, *¿qué es ese algo?*. A las constantes que determinan direcciones y fortalezas de las relaciones entre variables de una población les denominamos **parámetros**. 
+
+Para conocer estos parámetros, es necesario recurrir a los **estimadores**.
 
 Dada una muestra aleatoria { $Y_1,Y_2, ..., Y_n$ } extraída de una población que depende de un parámetro desconocido θ, un **estimador** de θ es un estadístico que asigna a cada resultado posible de la muestra un valor de θ. El valor de un estimador entrega una **estimación puntual** del parámetro poblacional. 
 
-Un ejemplo de estimador es el promedio de una muestra aleatoria, que recibe el nombre de **promedio muestral**:
+Un ejemplo de estimador es el promedio de una muestra aleatoria, que recibe el nombre de **promedio muestral**. Anteriormente tratamos al promedio como un *estadístico descriptivo* de un conjunto de datos, pero ahora se trata de un *estimador*, en el sentido de que funciona como un estadístico que busca acercarse a la media poblacional ($\mu$)
 
-$$\overline{y} = n^-1\sum_{i=1}^{n}Y_i$$
+Formalmente, la media muestral es:
+$$\overline{y} = \frac{1}n\sum_{i=1}^{n}Y_i$$
 
-Para poder escoger un estimador, es necesario evaluarlos mediante distintas propiedades de su distribución de probabilidades.
+Otro ejemplo de estimador corresponde a la **varianza muestral**, que busca estimar la varianza poblacional ($σ²$).
+
+Formalmente, la varianza muestral es: 
+
+$$S_Y^2 = \frac{1}{n-1}\sum_{i=1}^{n}(Y_i - \overline{Y})^2$$
+
+Para poder escoger un estimador, es necesario evaluarlos mediante distintas propiedades de su distribución de probabilidades. Estas propiedades dependen de los datos que poseamos: existen propiedades para muestras *pequeñas o finitas*, y propiedades para *muestras grandes*. A continuación repasaremos las más importantes. 
 
 ### Propiedades en muestras finitas
 
@@ -27,13 +42,13 @@ Las propiedades que revisaremos a continuación corresponden a muestras **finita
 
 #### a) Insesgamiento
 
-Un estimador es insesgado cuando su valor esperado es igual al parámetro que buscamos estimar. Si pudieramos calcular muestras aleatorias infinitas de nuestra población de interés, calcular el estimador para cada una de ellas y después promediar, obtendríamos el parámetro.
+Un estimador es insesgado cuando su valor esperado es igual al parámetro que buscamos estimar. Si pudieramos calcular muestras aleatorias infinitas de nuestra población de interés, calcular el estimador para cada una de ellas y después promediar, obtendríamos el parámetro. Que un estimador sea insesgado es muy importante, pues nos asegura que la estimación calculada sea la más aproximnada al valor poblacional real.
 
 En otros términos, si $t(x)$ es un estimador de un parámetro θ, y sea f(*t*,θ) la función de densidad de probabilidad de *t*. Entonces, t es *insesgado* si $E(t) =$ θ
 
 La **media muestral** es un ejemplo de estimador insesgado de la media poblacional de una población determinada. Al incrementar el tamaño muestral, su varianza puede acercarse mucho al cero.
 
-En términos matemáticos,sea $Y_1, Y_2, ..., Y_n$ una muestra alatoria de una población media $\mu_y$:
+En términos matemáticos,sea $Y_1, Y_2, ..., Y_n$ una muestra aleatoria de una población media $\mu_y$:
 
 $$ \overline{y} =   \frac{1}{n} (Y_1 +Y_2 + ... + Y_n) = \frac{1}{n}\sum_{i=1}^{n} Y_i $$
 
@@ -45,23 +60,9 @@ Para un estimador $W$ que no es insesgado, o sea, que es **sesgado** de un pará
 
 $$Sesgo(W) = E(W) - θ$$
 
-#### b) Eficencia relativa
-
-Si nos encontramos frente a dos estimadores *insesgados*, estos pueden ser comparados mediante su varianza. El estimador **más** eficiente es el que posee una varianza más pequeña. Es decir, $t_1$ es más eficente que $t_2$ si $Var(t_1) < Var(t_2)$
-
-Por otra parte, si nos encontramos frente a dos estimadores *sesgados*, estos pueden ser comparados mediante el cálculo del error cuadrático medio (ECM).
-
-El ECM se define como:
-
-$$ECM_i = E[(t_i - θ)^2]$$ También puede ser calculado como:
-
-$$ECM = Var(t) + sesgo^2$$
-
-El ECM mide, en promedio, qué tan lejos está el estimador del parámetro. De esta manera, el estimador que posea un ECM más pequeño es más eficiente.
-
 ### Propiedades asintóticas
 
-Estas propiedades se encuentran relacionadas con el comportamiento de los estimadores a medida que el tamaño de la muestra aleatoria crece sin límites. También se les suelen denominar **propiedades de muestra grande** ($n → ∞$). Estas se encuentran basadas en la idea de que mientras más grande es el tamaño de la muestra, mejor es el procedimiento de estimación.
+Estas propiedades se encuentran relacionadas con el comportamiento de los estimadores a medida que el tamaño de la muestra aleatoria crece sin límites. También se les suelen denominar **propiedades de muestra grande** ($n → ∞$). Estas se encuentran basadas en la idea de que mientras *más* grande es el tamaño de la muestra, *mejor* es el procedimiento de estimación.
 
 #### a) Consistencia
 
@@ -71,7 +72,9 @@ Cuando un estimador es consistente, también se dice que el parámetro es el lí
 
 En otros términos, sea $t(x)$ un estimador de θ basado en una muestra $Y_1, Y_2, ..., Y_n$ del tamaño $n$. Entonces, $t(x)$ es consistente para θ si:
 
-$$lim_{n → ∞} P(|t-θ| >ε) = 0$$ Si un estimador no es consistente, entonces no es útile saber sobre el parámetro. Es por esta razón que que la consistencia es un **requisito mínimo** de un estimador.
+$$lim_{n → ∞} P(|t-θ| >ε) = 0$$ 
+
+Si un estimador no es consistente, entonces no es útil saber sobre el parámetro. Es por esta razón que que la consistencia es un **requisito mínimo** de un estimador.
 
 Un estimador insesgado no es necesariamente consistente, pero aquellos estimadores insesgados que además poseen varianzas que se reducen a cero a medida que el tamaño muestral aumenta son consistentes. Es decir, si $E(t_n) = θ$ y \$Var(t_n) → 0 \$ cuando $n → ∞$, entonces $t_n$ es consistente.
 
