@@ -68,25 +68,31 @@ Estas propiedades se encuentran relacionadas con el comportamiento de los estima
 
 La consistencia hace referencia a qué tan lejos es probable que el estimador se encuentre del parámetro, a medida que el tamaño de la muestra aumente de manera indefinida. Es decir, un estimador consistente se concentra cada vez más alrededor del valor del parámetro, lo que significa que en las muestras mayores, es cada vez menos probable que el estimador se aleje del parámetro.
 
-Cuando un estimador es consistente, también se dice que el parámetro es el límite en probabilidad del estimador.
-
-En otros términos, sea $t(x)$ un estimador de θ basado en una muestra $Y_1, Y_2, ..., Y_n$ del tamaño $n$. Entonces, $t(x)$ es consistente para θ si:
-
-$$lim_{n → ∞} P(|t-θ| >ε) = 0$$ 
+En otras palabras, un estimador consistente posee un sesgo que se aproxima a cero cuando el tamaño de la muestra es grande o tiende al infinito.
 
 Si un estimador no es consistente, entonces no es útil saber sobre el parámetro. Es por esta razón que que la consistencia es un **requisito mínimo** de un estimador.
 
-Un estimador insesgado no es necesariamente consistente, pero aquellos estimadores insesgados que además poseen varianzas que se reducen a cero a medida que el tamaño muestral aumenta son consistentes. Es decir, si $E(t_n) = θ$ y \$Var(t_n) → 0 \$ cuando $n → ∞$, entonces $t_n$ es consistente.
-
 Un estimador consistente es el promedio de una muestra aleatoria, extraído de una población. Esto es porque, mientras más grande sea el tamaño de la muestra, su varianza se acercará al 0. Por tanto, $Var(\overline{y}) → 0$ cuando $n → ∞$, así que $\overline{y}_n$ es consistente de $\mu$, además de ser insesgado.
 
-#### b) Teorema Central del Límite
+#### b) Precisión
+
+Un estimador es más preciso cuando más pequeña la varianza de su distribución muestral. La precisión del estimador aumentará mientras más grande sea la muestra con la que trabajemos. De hecho, la varianza puede acercarse mucho al cero cuando se incrementa el tamaño muestral.
+
+Mientras más pequeña sea la varianza, y por lo tanto más precisio nuestro estimador, nuestro **error de estimación** será menor. 
+
+#### c) Teorema Central del Límite
 
 Si poseemos una muestra aleatoria de determinada población, su distribución de medias muestrales se acercará cada vez más a una **distribución normal** a medida que el tamaño de la muestra aumente y tienda al infinito.
 
 Sea $Y_1, Y_2, ..., Y_n$ una muestra aleatoria de una población con media $\mu$ y varianza $σ²$. Entonces,
 
 $$\sqrt{n}(\overline{y} - \mu) →^d N(0,σ²) $$ donde $d$ significa que la expresión converge en distribución normal cuando $n$ tiene al infinito ($n → ∞$)
+
+Este teorema es muy importante, pues para realizar diversos procesos estadísticos como las **pruebas de hipótesis**, es necesario asumir que las medias muestrales se distribuyen de manera normal.
+
+Además, es importante recalcar que este teorema se aplica independientemente de la distribución que presente la población.
+
+![](input/TLC.png)
 
 ## 2. Test de Hipótesis
 
