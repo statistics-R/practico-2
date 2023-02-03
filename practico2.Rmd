@@ -124,7 +124,7 @@ Esto se lee como "la probabilidad de rechazar H~0~ cuando H~0~ es verdadera"
 
 ### c) Estadístico de contraste
 
-Una vez definidas las hipótesis, es necesario elegir un estadísito de prueba para comparar la información que nos entrega la muestra y la hipótesis nula. El estadístico de prueba (*T*) es una variable aleatoria que depende de la muestra, y a partir de su cálculo, se puede definir una regla de rechazo. En otras palabras, utilizando el estadístico *T* podemos establecer cuándo se rechaza H~0~ en favor de H~1~, y viceversa.
+Una vez definidas las hipótesis, es necesario elegir un estadísito de prueba para comparar la información que nos entrega la muestra con la hipótesis nula. El estadístico de prueba (*T*) es una variable aleatoria que depende de la muestra, y a partir de su cálculo, se puede definir una regla de rechazo. En otras palabras, utilizando el estadístico *T* podemos establecer cuándo se rechaza H~0~ en favor de H~1~, y viceversa.
 
 Las reglas del rechazo están basadas en comparar el **valor del estadístico de prueba (*t*)** con un **valor crítico (*c*)**. Para determinar este valor, se debe definir el nivel de significancia de la prueba ($\alpha$). Para el nivel de significancia se suelen utilizar los valores de 0,1; 0,05; 0,01. Este valor implica, por ejemplo, que el investigador está dispuesta a rechazar H~0~ incorrectamente un 5% de las veces, si se considera $\alpha$ = 0,05. En otras palabras, la probabilidad de un error tipo I es de 5%.
 
@@ -225,4 +225,20 @@ Las fórmulas para calcular un intervalo de confianza considerando un test bilat
 -   { $\overline{y} ± t^{n-1}_{\alpha/2} * SE(\overline{y})$ }, cuando se conoce la distribución normal de $Y$, pero se desconoce su varianza $σ_y^2$
 
 -   { $\overline{y} ± 1.96 * SE(\overline{y})$ }, cuando se desconoce tanto la distribución como la varianza de $Y$
+
+## Resúmen Prueba de Hipótesis
+
+Para finalizar este práctico, haremos un breve repaso acerca del procemiento para realizar una prueba de hipótesis. 
+
+1. **Identificar las hipótesis**. De acuerdo al parámetro que estamos buscando y las suposiciones que surgen respecto a él, debemos identificar la *hipótesis nula* y la *hipótesis alternativa*. Importante es recordar que la hipótesis que se pondrá aprueba es la nula ($H_0$).
+
+2. **Naturaleza de la prueba**. De acuerdo a la hipótesis alternativa establecida, se define la naturaleza de la prueba. Esta puede ser una *prueba de dos colas*, *prueba de una cola izquierda* o una *prueba de una cola derecha*. De acuerdo a la naturaleza, cambia la regla de rechazo para descartar $H_0$. 
+
+3. **Nivel de confianza de la prueba**. El siguiente paso es establecer el nivel de confianza de la prueba de hipótesis, lo que nos permitirá posteriormente calcular el valor del estadístico de prueba. Para el nivel de significancia se suelen utilizar los valores de 0,1; 0,05; 0,01. En la mayoría de situaciones, utilizaremos un $\alpha$ igual a 0,05 (95% de confianza)
+
+4. **Elección estadístico de prueba**. A continuación, 
+
+
+
+
 
