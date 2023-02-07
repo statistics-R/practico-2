@@ -126,9 +126,9 @@ Esto se lee como "la probabilidad de rechazar H~0~ cuando H~0~ es verdadera"
 
 Una vez definidas las hipótesis, es necesario elegir un estadísito de prueba para comparar la información que nos entrega la muestra con la hipótesis nula. El estadístico de prueba (*T*) es una variable aleatoria que depende de la muestra, y a partir de su cálculo, se puede definir una regla de rechazo. En otras palabras, utilizando el estadístico *T* podemos establecer cuándo se rechaza H~0~ en favor de H~1~, y viceversa.
 
-Las reglas del rechazo están basadas en comparar el **valor del estadístico de prueba (*t*)** con un **valor crítico (*c*)**. Para determinar este valor, se debe definir el nivel de significancia de la prueba ($\alpha$). Para el nivel de significancia se suelen utilizar los valores de 0,1; 0,05; 0,01. Este valor implica, por ejemplo, que el investigador está dispuesta a rechazar H~0~ incorrectamente un 5% de las veces, si se considera $\alpha$ = 0,05. En otras palabras, la probabilidad de un error tipo I es de 5%.
+Las reglas del rechazo están basadas en comparar el **valor del estadístico de prueba (*t*)** con un **valor crítico (*c*)**. Para determinar este valor, se debe definir el nivel de significancia de la prueba ($\alpha$). Para el nivel de significancia se suelen utilizar los valores de 0,1; 0,05; 0,01. Este valor implica, por ejemplo, que el investigador está dispuesto a rechazar H~0~ incorrectamente un 5% de las veces, si se considera $\alpha$ = 0,05. En otras palabras, la probabilidad de un error tipo I es de 5%.
 
-Una vez establecido el nivel de significancia, es posible calcular el valor crítico mediante la distribución de *T*, *suponiendo* que H~0~ es verdadera. Los valores de *t* que resulten en el rechazo de la hipótesis nula se conocen como la **región de rechazo**.
+Una vez establecido el nivel de significancia, es posible calcular el valor crítico mediante la distribución de *T*, *suponiendo* que H~0~ es verdadera. Los valores de *t* que resulten en el rechazo de la hipótesis nula se conocen como la **región de rechazo**. 
 
 Teniendo eso en consideración, la hipótesis nula se expresa como $H_0: \mu = \mu_0$, donde $\mu_0$ es un valor que se especifica. Siguiendo el ejemplo expuesto con anterioridad, la hipótesis nula corresponde a $H_0: \mu = 0$. Es decir, la diferencia de probabilidades de que las personas negras reciban ofertas de trabajo con relación a las personas blancas es 0.
 
@@ -236,7 +236,52 @@ Para finalizar este práctico, haremos un breve repaso acerca del procemiento pa
 
 3. **Nivel de confianza de la prueba**. El siguiente paso es establecer el nivel de confianza de la prueba de hipótesis, lo que nos permitirá posteriormente calcular el valor del estadístico de prueba. Para el nivel de significancia se suelen utilizar los valores de 0,1; 0,05; 0,01. En la mayoría de situaciones, utilizaremos un $\alpha$ igual a 0,05 (95% de confianza)
 
-4. **Elección estadístico de prueba**. A continuación, 
+4. **Valor crítico de t**. A continuación, buscaremos el valor crítico del estadístico de prueba de nuestro test. Para conocer este valor, necesitamos saber el *nivel de confianza* de la prueba (definido en el paso anterior) y los *grados de libertad*. Estos últimos, para la distribución *t de Student*, corresponden a $n-1$. En otras palabras, los grados de libertad a utilizar serán el valor del tamaño de la muestra, menos 1. Con esa información a mano, podemos buscar el valor crítico de nuestra prueba de hipótesis. Estos ya están calculados y se pueden encontrar en diversos softwares de estadística (como R), o bien seguir el método tradicional que es buscarlo en la **Tabla de la prueba T de Student**.
+
+![](input/tabla_pruebat.jpg)
+
+Por ejemplo, si establezco un nivel de confianza de 95% (0,05) y el valor de los grados de libertad es 14, el valor crítico para una prueba de una cola corresponde a 1.761. Si este valor es positivo o negativo depende del tipo de prueba que esté realizando. Si es una prueba de *cola izquierda*, el valor es -1.761, mientras si es una prueba de *cola derecha*, el valor es 1.761. 
+
+Siguiendo el mismo ejemplo, el valor crítico para una prueba de dos colas corresponde a ±2.145. 
+
+**¡Recordar!** Como vimos anteriormente, el valor crítico de muestras superiores a 120 es practicamente igual en la distribución t como en la distribución normal estándar. Es por esto que la tabla termina formalmente en el valor de 120 grados de libertad, y el siguiendo valor corresponde a un símbolo infinito ∞. Esto significa que se considera a los valores mayores a 120 como *muestras grandes* y, por lo tanto, se aplica el Teorema Central del Límite. 
+
+5. **Cálculo estadístico de contraste**. De acuerdo a la información que tengamos disponible, seleccionamos la fórmula para calcular el estadístico de contraste. Esta elección dependerá de si poseemos el valor de la varianza y/o conocemos que la media poblacional se distribuye de manera normal. Como vimos anteriormente, existen 3 casos posibles. 
+
+6. **Comparar estadístico de prueba y valor crítico**. Una vez calculado nuestro estadístico t, corresponde compararlo con el valor crítico de la prueba, siguiendo la regla de rechazo de $H_0$ anteriormente escogida. De acuerdo a esto, se *acepta* o *rechaza* la hipótesis nula. 
+
+**Opcional**. También podemos utilizar el *valor-p*, como revisamos anteriormente. Para aquello, debemos seguir las fórmulas expuestas arriba y comparar tal valor con nuestro nivel de significancia escogido. Recordar que mientras más pequeño sea el *valor-p*, más evidencia existe en contra de $H_0$.
+
+7. **Sacar conclusiones**. Si bien ya terminamos con la parte más pesada de la prueba de hipótesis, es muy importante detallar nuestras conclusiones y explicar nuestros hallazgos de manera concreta y sencilla. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
